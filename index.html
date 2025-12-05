@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FalconAI — Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="file.svg">
+</head>
+<body>
+    <div class="container">
+        <div class="panel">
+            <div class="brand">
+                <img src="file.svg" alt="FalconAI logo" class="logo" width="40" height="40">
+                <div>
+                    <h2 style="margin:0">FalconAI</h2>
+                    <div class="small muted">Built by Hriday</div>
+                </div>
+            </div>
+            <div id="chat" aria-live="polite" aria-label="Chat messages"></div>
+            <div class="input-area">
+                <button id="attach" type="button" title="Attach image" aria-label="Attach file">📎</button>
+                <input id="fileInput" type="file" accept="image/*" style="display:none" />
+                <input id="prompt" type="text" placeholder="Ask the AI..." aria-label="Message input" />
+                <button id="send" type="button">Send</button>
+                <button id="clear" type="button">Clear</button>
+            </div>
+        </div>
+
+        <aside class="sidebar panel">
+            <div class="row"><strong>Controls</strong></div>
+            <div class="row small" style="margin-top:8px">
+                <label class="row" for="darkToggle">
+                    <input id="darkToggle" type="checkbox" />
+                    <span style="margin-left:8px">Dark mode</span>
+                </label>
+            </div>
+            <div class="row small" style="margin-top:8px">
+                <label class="row" for="friendlyToggle">
+                    <input id="friendlyToggle" type="checkbox" checked />
+                    <span style="margin-left:8px">Friendly mode (talk like a friend)</span>
+                </label>
+            </div>
+            <!-- proxy option removed -->
+            <!-- self-test removed per user request -->
+            <hr />
+            <div class="muted small">Integration</div>
+            <p class="small">This demo uses a mock AI by default. You can choose to send prompts to a local GPT-4o adapter.</p>
+            <div style="margin-top:8px">
+                <label for="providerSelect" class="small">AI Model:</label>
+                <select id="providerSelect" class="small" style="width:100%; margin-top:6px">
+                    <option value="mock">Local Mock (fast, free)</option>
+                    <option value="gpt4o">GPT-4o (via local adapter)</option>
+                    <option value="gemini">Gemini (via local adapter)</option>
+                </select>
+            </div>
+        </aside>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
